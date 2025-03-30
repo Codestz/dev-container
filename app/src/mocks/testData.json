@@ -1,0 +1,11 @@
+{
+  "company": {
+    "name": "Archie Inc",
+    "enterprise": "Archie Inc"
+  },
+  "user": {
+    "name": "Jorge Osorio",
+    "email": "jorge@example.com",
+    "avatar": ""
+  }
+} 

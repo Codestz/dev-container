@@ -1,0 +1,22 @@
+{
+  "name": "Node.js Development Container",
+  "dockerFile": "Dockerfile",
+  "forwardPorts": [1313, 3000],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "node",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+    }
+  },
+  "postCreateCommand": "cd /workspace/app && pnpm install",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/app,target=/workspace/app,type=bind,consistency=cached"
+  ]
+}

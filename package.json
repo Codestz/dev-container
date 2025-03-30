@@ -1,0 +1,19 @@
+{
+  "name": "dev-container-file-editor",
+  "version": "1.0.0",
+  "description": "File editor for dev container",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.26.10",
+    "archiver": "^7.0.1",
+    "chokidar": "^3.5.3",
+    "dockerode": "^4.0.4",
+    "estree-walker": "^3.0.3",
+    "express": "^4.21.2",
+    "magic-string": "^0.30.17",
+    "ws": "^8.18.1"
+  }
+}

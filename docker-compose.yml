@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./app:/workspace/app
+      - pnpm-store:/pnpm/store
+    environment:
+      - NODE_ENV=development
+      - VITE_HOST=0.0.0.0
+      - VITE_PORT=3001
+    command: sh -c "cd /workspace/app && rm -rf node_modules && pnpm install && pnpm run dev"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  editor:
+    image: node:20
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    ports:
+      - "3939:3939"
+    command: sh -c "cd /workspace && npm install express ws && node index.js"
+
+volumes:
+  pnpm-store:

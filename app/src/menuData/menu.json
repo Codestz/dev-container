@@ -1,0 +1,29 @@
+{
+  "navMain": [
+    {
+      "title": "Dashboard",
+      "url": "/dashboard",
+      "isActive": true
+    },
+    {
+      "title": "My Account",
+      "url": "/my-account",
+      "isActive": true
+    },
+    {
+      "title": "User Management",
+      "url": "/user-management",
+      "isActive": true
+    }
+  ],
+  "navSecondary": [
+    {
+      "title": "Support",
+      "url": "/about"
+    },
+    {
+      "title": "Feedback",
+      "url": "#"
+    }
+  ]
+}
