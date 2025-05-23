@@ -14,14 +14,17 @@ export default defineConfig({
   server: {
     hmr: {
       host: "0.0.0.0",
-      port: 24678,
+      port: 443,
       protocol: "ws",
-      clientPort: 24678,
+      clientPort: 443,
       overlay: false,
     },
     host: "0.0.0.0",
+    port: 3001,
     watch: {
       usePolling: true,
     },
+    cors: true,
+    allowedHosts: true,
   },
 });

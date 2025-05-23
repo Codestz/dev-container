@@ -1,7 +1,10 @@
 FROM node:20
 
-# Install pnpm
-RUN npm install -g pnpm
+# Install pnpm and git
+RUN npm install -g pnpm \
+    && apt-get update \
+    && apt-get install -y git \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
